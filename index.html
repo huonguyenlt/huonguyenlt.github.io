@@ -255,7 +255,14 @@
           enableUtc: false
       });
   </script>
-<embed src="silence.mp3" type="audio/mp3" autostart="true" hidden="true">
-  <audio id="player" autoplay controls><source src="music.mp3" type="audio/mp3"></audio>
-  </body>
+<iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+<audio id="player" autoplay loop controls>
+  <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<script>
+  window.onload = function () {
+      document.querySelector("video").muted = false;
+  };
+</script>
 </html>
