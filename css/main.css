@@ -173,7 +173,12 @@
   font-family: "Great Vibes", cursive; }
 
 .ww-section {
-  padding: 100px 0; }
+  padding: 100px 0;
+background-color: #f7f1f3; }
+
+.kim {
+  background-color: #ece1df; 
+}
 
 .btn-primary {
   color: #fff; }
@@ -628,7 +633,7 @@
     position: absolute;
     content: " ";
     width: 1px;
-    background-color: #d4d4d4;
+    background-color: #e61717;
     left: 50%;
     margin-left: 0px;
   }
