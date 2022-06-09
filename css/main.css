@@ -2008,4 +2008,28 @@ background-color: #f7f1f3; }
   }
   
   /*# sourceMappingURL=style.css.map */
-  
+  .round-img{
+    width: 65%;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    
+}
+/* .round-card{
+  padding: 1.5em .5em .5em;
+  border-radius: 2em;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  background: transparent ;opacity: 0.5;
+} */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+/* .halfsize {
+  -moz-transform:scale(0.5);
+  -webkit-transform:scale(0.5);
+  transform:scale(0.5);
+} */
