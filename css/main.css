@@ -1045,7 +1045,7 @@ background-color: #f7f1f3; }
   #fh5co-counter .display-tc .btn,
   .fh5co-cover .display-tc .btn {
     padding: 15px 20px;
-    background: rgb(255, 255, 255) ;
+    background: #00000052 ;
     color: #F14E95;
     /* border: none !important; */
     font-size: 14px;
@@ -1111,7 +1111,7 @@ background-color: #f7f1f3; }
     display: inline-block;
     width: 100px;
     height: 100px;
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(241, 78, 149, 0.8);
     margin: 0 4px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -2038,4 +2038,8 @@ background-color: #f7f1f3; }
 
 .nav-link{
   color: #F14E95 !important;
+}
+
+.text-form{
+  color: white !important;
 }
