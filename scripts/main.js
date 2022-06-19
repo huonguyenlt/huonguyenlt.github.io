@@ -56,38 +56,38 @@ $(".ww-filter-button").on("click", function(e) {
   var button = $(this);
   button.removeClass("btn-outline-primary");
   button.addClass("btn-primary");
-  filterItems(button.data("filter"));
-  e.preventDefault();
+  // filterItems(button.data("filter"));
+  // e.preventDefault();
 });
 
-function filterItems(filter) {
-  if (filter === activeFilter) {
-    return;
-  }
+// function filterItems(filter) {
+//   if (filter === activeFilter) {
+//     return;
+//   }
 
-  activeFilter = filter;
-  $(".ww-gallery .card").each(function() {
-    var card = $(this);
-    var groups = card.data("groups");
-    var show = false;
-    if (filter === "all") {
-      show = true;
-    } else {
-      for (var i = 0; i < groups.length; i++) {
-        if (groups[i] === filter) {
-          show = true;
-        }
-      }
-    }
-    // hide everything first
-    card.fadeOut(400);
-    setTimeout(function() {
-      if (show && !card.is(":visible")) {
-        card.fadeIn(400);
-      }
-    }, 500);
-  });
-}
+//   activeFilter = filter;
+//   $(".ww-gallery .card").each(function() {
+//     var card = $(this);
+//     var groups = card.data("groups");
+//     var show = false;
+//     if (filter === "all") {
+//       show = true;
+//     } else {
+//       for (var i = 0; i < groups.length; i++) {
+//         if (groups[i] === filter) {
+//           show = true;
+//         }
+//       }
+//     }
+//     // hide everything first
+//     card.fadeOut(400);
+//     setTimeout(function() {
+//       if (show && !card.is(":visible")) {
+//         card.fadeIn(400);
+//       }
+//     }, 500);
+//   });
+// }
 
 // Light Box
 $(document).on("click", '[data-toggle="lightbox"]', function(event) {
