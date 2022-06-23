@@ -216,36 +216,26 @@
 <div class="ww-section ww-rsvp-detail text-white" id="rsvp">
   <div class="container" data-aos="zoom-in-up" data-aos-duration="1000">
     <div class="col text-center">
-      <h2 class="h1 ww-title pb-3 text-form" data-aos="zoom-in-down" data-aos-duration="1000">Hãy để lại thông tin</h2>
-      <h2 class="h1 ww-title pb-3 text-form" data-aos="zoom-in-down" data-aos-duration="1000">Chúng tôi sẽ gửi tặng bạn một món quà tại bữa tiệc Le Jardin</h2>
+      <h2 class="h1 ww-title pb-3 text-form" data-aos="zoom-in-down" data-aos-duration="1000">Hãy để lại lời chúc cho chúng tôi nhé</h2>
+      
     </div>
     <div class="row ww-rsvp-form">
       <div class="col-md-10">
         <div class="card-body">
           <form action="https://sheetdb.io/api/v1/vj73ubiyk0y1x" method="POST" id="sheetdb-form">
             <div class="row">
-              <div class="col md-6 pb-3">
+              <div class="col">
                 <div class="form-group">
-                  <label for="name-input">Tên của bạn*</label>
+                  <label for="name-input">Tên của bạn</label>
                   <input class="form-control" name="data[name]" required="required" />
-                </div>
-              </div>
-              <div class="col-md-6 pb-3">
-                <div class="form-group">
-                  <label for="email-input">Tiệc tham dự*</label>
-                  <select class="form-control" id="events-input" name="data[restaurant]" required="required">
-                    <option value="" disabled selected hidden>Chọn nhà hàng</option>
-                    <option value="cattuong">Cát Tường Garden</option>
-                    <option value="lejardin">Le Jardin</option>
-                  </select>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <div class="form-group">
-                  <label for="message-input">Lời nhắn</label>
-                  <textarea class="form-control" name="data[message]" required="required" placeholder="Mối quan hệ của bạn với CD/CR và lời chúc" rows="4"></textarea>
+                  <label for="message-input">Lời chúc</label>
+                  <textarea class="form-control" name="data[message]" required="required" placeholder="Lời nhắn/chúc tới CD và CR" rows="4"></textarea>
                 </div>
               </div>
             </div>
@@ -301,14 +291,8 @@
           response => response.json()
       ).then((html) => {
         // you can put any JS code here
-        console.log(name)
-        if (document.getElementById('events-input').options[document.getElementById('events-input').selectedIndex].value === "cattuong") {
-          alert('Cảm ơn lời chúc của bạn. Hẹn gặp bạn tại bữa tiệc nhé!')
-          location.reload();
-        }else {
-          alert('Cảm ơn bạn. Chúng tôi sẽ gửi tặng bạn món quà tại bữa tiệc. Hẹn gặp bạn ở Le Jardin nhé!')
-          location.reload();
-        }
+        alert('Cảm ơn lời chúc của bạn nhé!')
+        location.reload();
       });
     });
   </script>
@@ -336,11 +320,7 @@
         data= response.data;
         for(let i = 0; i < data.length; i++){
           row=data[i];
-          console.log(row["message"])
-          if(row["message"]===""){
-            continue;
-          }else{
-            rowli = document.createElement("li")
+          rowli = document.createElement("li")
             if(i===0){
               rowli.classList.add("active")
             }
@@ -357,6 +337,10 @@
             rowdiv2.classList.add("row")
             rowdiv3=document.createElement("div")
             rowdiv3.classList.add("col-md-8", "mx-auto")
+            rowimg=document.createElement("img")
+            rowimg.classList.add("card-img-top", "round-img", "center")
+            rowimg.src=row["pics"]
+            rowimg.style="width:20%"
             rowdiv4=document.createElement("div")
             rowdiv4.classList.add("card-body", "text-center")
             rowdiv5=document.createElement("div")
@@ -367,11 +351,11 @@
             rowp.appendChild(document.createTextNode(row["message"]))
             rowdiv4.appendChild(rowdiv5)
             rowdiv4.appendChild(rowp)
+            rowdiv3.appendChild(rowimg)
             rowdiv3.appendChild(rowdiv4)
             rowdiv2.appendChild(rowdiv3)
             rowdiv1.appendChild(rowdiv2)
             inner[0].appendChild(rowdiv1)
-          }
         }
     });
   </script>
