@@ -222,12 +222,12 @@
     <div class="row ww-rsvp-form">
       <div class="col-md-10">
         <div class="card-body">
-          <form action="https://sheetdb.io/api/v1/5rv02yhj83x2o" method="POST" id="sheetdb-form">
+          <form action="https://sheetdb.io/api/v1/5rv02yhj83x2" method="POST" id="sheetdb-form">
             <div class="row">
               <div class="col">
                 <div class="form-group">
                   <label for="name-input">Tên của bạn</label>
-                  <input class="form-control" name="data[name]" required="required" />
+                  <input class="form-control" name="data[name]" required="required" pattern="^((?!Crytorag).)*$" />
                 </div>
               </div>
             </div>
@@ -309,7 +309,7 @@
   <script>
     var indicators=document.getElementsByClassName("carousel-indicators");
     var inner=document.getElementsByClassName("carousel-inner");
-    axios.get('https://sheetdb.io/api/v1/5rv02yhj83x2o')
+    axios.get('https://sheetdb.io/api/v1/5rv02yhj83x2')
     .then( response => {
         data= response.data;
         for(let i = 0; i < data.length; i++){
